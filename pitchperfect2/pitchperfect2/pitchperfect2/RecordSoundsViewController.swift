@@ -20,10 +20,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecording.isEnabled = false
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     @IBAction func recordAudio(_ sender: AnyObject) {
         configureUI(recording: true)
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
