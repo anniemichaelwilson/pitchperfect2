@@ -142,6 +142,7 @@
                                 </constraints>
                                 <state key="normal" image="Stop"/>
                                 <connections>
+                                    <action selector="stopButtonPressed:" destination="tpE-NM-7wi" eventType="touchUpInside" id="A0y-RK-1Y9"/>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mZ8-x3-oxm"/>
                                 </connections>
                             </button>
@@ -164,6 +165,7 @@
                         <outlet property="rabbitButton" destination="vvS-R0-Fow" id="cj8-Br-8Af"/>
                         <outlet property="reverbButton" destination="yM7-2O-X0V" id="UmO-KM-nYV"/>
                         <outlet property="snailButton" destination="iOK-Uk-AQU" id="YMB-L9-I93"/>
+                        <outlet property="stopButton" destination="opi-AI-3Xo" id="yLn-cL-8M0"/>
                         <outlet property="vaderButton" destination="Vef-ZW-GEP" id="Yp4-dI-Mmf"/>
                     </connections>
                 </viewController>
