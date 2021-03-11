@@ -11,7 +11,6 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
 
     // MARK: Outlets
-
     @IBOutlet weak var snailButton: UIButton!
     @IBOutlet weak var chipmunkButton: UIButton!
     @IBOutlet weak var rabbitButton: UIButton!
@@ -31,8 +30,22 @@ class PlaySoundsViewController: UIViewController {
         case slow = 0, fast, chipmunk, vader, echo, reverb
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupAudio()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureUI(.notPlaying)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopAudio()
+    }
+    
     // MARK: Actions
-
     @IBAction func playSoundForButton(_ sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
             case .slow:
@@ -55,20 +68,4 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
         stopAudio()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupAudio()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        configureUI(.notPlaying)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        stopAudio()
-    }
-
 }
